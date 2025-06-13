@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon sever.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,6 +17,7 @@
     "@upstash/redis": "^1.34.9",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "mernnotes": "file:..",
     "mongoos": "^0.0.1-security",
     "mongoose": "^8.15.1"
   }

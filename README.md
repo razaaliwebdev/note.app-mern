@@ -10,6 +10,7 @@ A full-stack note-taking application built with the MERN stack (MongoDB, Express
 - Rate limiting for API protection
 - MongoDB database integration
 - RESTful API architecture
+- Production-ready build configuration
 
 ## 🛠️ Tech Stack
 
@@ -39,7 +40,37 @@ A full-stack note-taking application built with the MERN stack (MongoDB, Express
 - MongoDB
 - npm or yarn
 
-### Backend Setup
+### Quick Start
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd MernNotes
+   ```
+2. Install all dependencies (both frontend and backend):
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file in the backend directory:
+   ```
+   MONGODB_URI=your_mongodb_connection_string
+   PORT=5000
+   ```
+4. Start the development servers:
+
+   ```bash
+   # Terminal 1 - Backend
+   cd backend
+   npm run dev
+
+   # Terminal 2 - Frontend
+   cd frontend
+   npm run dev
+   ```
+
+### Manual Setup
+
+#### Backend Setup
 
 1. Navigate to the backend directory:
    ```bash
@@ -49,17 +80,13 @@ A full-stack note-taking application built with the MERN stack (MongoDB, Express
    ```bash
    npm install
    ```
-3. Create a `.env` file in the backend directory with the following variables:
-   ```
-   MONGODB_URI=your_mongodb_connection_string
-   PORT=5000
-   ```
+3. Create a `.env` file with required variables
 4. Start the development server:
    ```bash
    npm run dev
    ```
 
-### Frontend Setup
+#### Frontend Setup
 
 1. Navigate to the frontend directory:
    ```bash
@@ -74,21 +101,99 @@ A full-stack note-taking application built with the MERN stack (MongoDB, Express
    npm run dev
    ```
 
+## 🚀 Deployment
+
+### Production Build
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+This command will:
+
+1. Install backend dependencies
+2. Install frontend dependencies
+3. Build the frontend application
+
+### Starting Production Server
+
+To start the production server:
+
+```bash
+npm start
+```
+
+### Deployment Options
+
+#### Backend Deployment
+
+1. **Render**
+
+   - Connect your GitHub repository
+   - Set build command: `npm install`
+   - Set start command: `npm start`
+   - Add environment variables
+
+2. **Railway**
+
+   - Connect your GitHub repository
+   - Set build command: `npm install`
+   - Set start command: `npm start`
+   - Configure environment variables
+
+3. **Heroku**
+   - Create a new Heroku app
+   - Connect your GitHub repository
+   - Enable automatic deploys
+   - Add environment variables in Heroku dashboard
+
+#### Frontend Deployment
+
+1. **Vercel**
+
+   - Connect your GitHub repository
+   - Set build command: `npm run build`
+   - Set output directory: `frontend/dist`
+   - Configure environment variables
+
+2. **Netlify**
+   - Connect your GitHub repository
+   - Set build command: `npm run build`
+   - Set publish directory: `frontend/dist`
+   - Configure environment variables
+
 ## 🏗️ Project Structure
 
 ```
 MernNotes/
 ├── backend/
 │   ├── src/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   └── middleware/
 │   ├── server.js
 │   └── package.json
-└── frontend/
-    ├── src/
-    ├── public/
-    └── package.json
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── context/
+│   │   └── utils/
+│   ├── public/
+│   └── package.json
+└── package.json
 ```
 
 ## 🔧 Available Scripts
+
+### Root Directory
+
+- `npm install`: Install all dependencies (frontend and backend)
+- `npm run build`: Build the entire application
+- `npm start`: Start the production server
 
 ### Backend
 
@@ -107,6 +212,7 @@ MernNotes/
 - Rate limiting implemented using Upstash Redis
 - CORS enabled for secure cross-origin requests
 - MongoDB connection with proper error handling
+- Environment variables for sensitive data
 
 ## 🎨 UI/UX Features
 
@@ -115,6 +221,7 @@ MernNotes/
 - Toast notifications for user feedback
 - Intuitive navigation with React Router
 - Beautiful icons from Lucide React
+- Optimized production builds
 
 ## 🤝 Contributing
 
